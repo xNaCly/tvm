@@ -1,5 +1,6 @@
 FLAGS := -fdiagnostics-color=always \
 		 -Wall \
+		 -g3 \
 		 -Wpedantic \
 		 -std=c11 \
 		 -Wextra \
@@ -7,13 +8,13 @@ FLAGS := -fdiagnostics-color=always \
 		 -Wundef \
 		 -fno-common
 
-source := $(shell find . -name "*.c")
+source := $(shell find ./src/ -name "*.c")
 
 run: build
 	./tvm
 
 build: 
-	gcc $(FLAGS) $(source) -o tvm
+	gcc $(FLAGS) $(source) tvm.c -o tvm
 
 clean:
 	rm -fr tvm

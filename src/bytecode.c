@@ -1,9 +1,5 @@
 #include "bytecode.h"
-#include "common.h"
-#include <stdint.h>
 #include <stdio.h>
-
-void tvm_info(const char *t) { printf("INFO: %s\n", t); }
 
 static const char *OPCODE_TO_STRING[] = {
     [LOAD] = "LOAD",
